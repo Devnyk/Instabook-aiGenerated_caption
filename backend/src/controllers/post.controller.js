@@ -10,6 +10,9 @@ async function createPostController(req, res) {
   const base64Image = new Buffer.from(file.buffer).toString('base64'); //here the image data come in buffer we convert it to base64 string
 
   const caption = await generateCaption(base64Image);
+
+
+  res.json({caption})
   
   console.log("Generated Caption:", caption);
   
